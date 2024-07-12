@@ -1,10 +1,6 @@
-import { Header } from '../../components/ui';
-
 export function Offer() {
   return (
     <div className="page">
-      <Header isAuthorized />
-
       <main className="page__main page__main--offer">
         <section className="offer">
           <div className="offer__gallery-container container">

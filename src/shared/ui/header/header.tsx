@@ -1,17 +1,14 @@
-import { UserNotLogged } from '../user-not-autorized';
-import { UserProfile } from '../user-profile';
+import { Link } from 'react-router-dom';
 
-type OwnProps = {
-  isAuthorized: boolean;
-};
+import { PropsWithChildren } from 'react';
 
-export function Header({ isAuthorized = false }: OwnProps) {
+export function Header({ children }: PropsWithChildren) {
   return (
     <header className="header">
       <div className="container">
         <div className="header__wrapper">
           <div className="header__left">
-            <a className="header__logo-link" href="main.html">
+            <Link className="header__logo-link" to="/">
               <img
                 className="header__logo"
                 src="img/logo.svg"
@@ -19,12 +16,10 @@ export function Header({ isAuthorized = false }: OwnProps) {
                 width="81"
                 height="41"
               />
-            </a>
+            </Link>
           </div>
           <nav className="header__nav">
-            <ul className="header__nav-list">
-              {isAuthorized ? <UserProfile /> : <UserNotLogged />}
-            </ul>
+            <ul className="header__nav-list">{children}</ul>
           </nav>
         </div>
       </div>

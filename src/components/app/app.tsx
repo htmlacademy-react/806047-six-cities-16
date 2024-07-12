@@ -1,5 +1,6 @@
-import { Main } from '../../pages/main/main';
+import { RouterProvider } from 'react-router-dom';
+import { appRouter } from '../router';
 
 export function App() {
-  return <Main offerCount={10} />;
+  return <RouterProvider router={appRouter()} />;
 }

@@ -1,10 +1,6 @@
-import { Header } from '../../components/ui';
-
 export function OfferNotLogged() {
   return (
     <div className="page">
-      <Header isAuthorized={false} />
-
       <main className="page__main page__main--offer">
         <section className="offer">
           <div className="offer__gallery-container container">
