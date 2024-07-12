@@ -14,7 +14,7 @@ export const AppRoutes: Record<RouteKey, string> = {
   Login: '/login',
   Favorites: '/favorites',
   Offer: '/offer',
-  NotFound: '/404',
+  NotFound: '*',
 };
 
 export const RootClassName: Record<string, string> = {

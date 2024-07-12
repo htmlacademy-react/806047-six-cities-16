@@ -6,6 +6,7 @@ import { Login } from '../../pages/login/login';
 import { Main } from '../../pages/main/main';
 import { AuthGuard, GuestGuard } from '../guards';
 import { NotFound } from '../../pages/not-found/not-found';
+import { AppRoutes } from '../../shared/lib/conts';
 
 export function appRouter() {
   return createBrowserRouter([
@@ -13,11 +14,11 @@ export function appRouter() {
       element: <BaseLayout />,
       children: [
         {
-          path: '/',
+          path: AppRoutes.Root,
           element: <Main />,
         },
         {
-          path: '/favorites',
+          path: AppRoutes.Favorites,
           element: (
             <GuestGuard>
               <Favorites />
@@ -25,7 +26,7 @@ export function appRouter() {
           ),
         },
         {
-          path: '/offer/:offerId',
+          path: `${AppRoutes.Offer}/:offerId`,
           element: (
             <GuestGuard>
               <Offer />
@@ -35,7 +36,7 @@ export function appRouter() {
       ],
     },
     {
-      path: '/login',
+      path: AppRoutes.Login,
       element: (
         <AuthGuard>
           <Login />
@@ -43,7 +44,7 @@ export function appRouter() {
       ),
     },
     {
-      path: '*',
+      path: AppRoutes.NotFound,
       element: <NotFound />,
     },
   ]);
